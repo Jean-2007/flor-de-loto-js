@@ -1,26 +1,40 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Flor de Loto en JS</title>
+  <title>Flor de Loto Animada</title>
   <style>
     body {
       margin: 0;
       background-color: black;
       display: flex;
+      flex-direction: column;
       align-items: center;
       justify-content: center;
       height: 100vh;
+      color: white;
+      font-family: sans-serif;
     }
     canvas {
       border: 1px solid #333;
+      margin-bottom: 1rem;
+    }
+    #controls {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
     }
   </style>
 </head>
 <body>
   <canvas id="loto" width="600" height="600"></canvas>
-  <script src="flor_de_loto.js"></script>
+  <div id="controls">
+    <label for="speed">Velocidad (ms):</label>
+    <input type="range" id="speed" min="10" max="500" value="100" />
+    <span id="speedVal">100</span> ms
+    <button onclick="iniciarAnimacion()">Dibujar</button>
+  </div>
+  <script src="flor_de_loto_animada.js"></script>
 </body>
 </html>
